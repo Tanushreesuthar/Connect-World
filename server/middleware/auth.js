@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
 
-export const verifyToken = async (req, res, next) => {
+export const verifyToken = async (req, res, next) => { //next parameter will allow us to function continue
   try {
-    let token = req.header("Authorization");
+    let token = req.header("Authorization"); //frontend m jo hum token bhej rahe the whai check karnge vaps se 
 
     if (!token) {
       return res.status(403).send("Access Denied");

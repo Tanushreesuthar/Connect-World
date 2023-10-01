@@ -19,7 +19,7 @@ const postSchema = mongoose.Schema(
     picturePath: String,
     userPicturePath: String,
     likes: {
-      type: Map,
+      type: Map, // kisne kiski post like kar rahi ese hi momgo db save karta hai iss liye hum abhi map use kar rahe hai  ,all we gona do that if the id exixt in a map  if it exisit it will be true always
       of: Boolean,
     },
     comments: {

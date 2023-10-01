@@ -17,9 +17,9 @@ export const createPost = async (req, res) => {
       likes: {},
       comments: [],
     });
-    await newPost.save();
+    await newPost.save(); //saving that into the mongodb
 
-    const post = await Post.find();
+    const post = await Post.find(); //now this will return all the post created by that particulr user not that single post he created now 
     res.status(201).json(post);
   } catch (err) {
     res.status(409).json({ message: err.message });
@@ -27,6 +27,7 @@ export const createPost = async (req, res) => {
 };
 
 /* READ */
+//getFeedPosts grab all and everyones post 
 export const getFeedPosts = async (req, res) => {
   try {
     const post = await Post.find();
@@ -36,6 +37,8 @@ export const getFeedPosts = async (req, res) => {
   }
 };
 
+
+//getUserPosts this will only grab that particular user post
 export const getUserPosts = async (req, res) => {
   try {
     const { userId } = req.params;
@@ -60,9 +63,11 @@ export const likePost = async (req, res) => {
       post.likes.set(userId, true);
     }
 
+
+    //here we are updating the frontend , above we have updated the like post thing
     const updatedPost = await Post.findByIdAndUpdate(
       id,
-      { likes: post.likes },
+      { likes: post.likes },  //post.likes this the new list we are passing of how many and which people liked 
       { new: true }
     );
 

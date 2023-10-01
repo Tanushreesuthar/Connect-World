@@ -13,6 +13,6 @@ router.get("/:id", verifyToken, getUser);
 router.get("/:id/friends", verifyToken, getUserFriends);
 
 /* UPDATE */
-router.patch("/:id/:friendId", verifyToken, addRemoveFriend);
+router.patch("/:id/:friendId", verifyToken, addRemoveFriend);  //PATCH is suitable when making partial updates to a resource
 
 export default router;
