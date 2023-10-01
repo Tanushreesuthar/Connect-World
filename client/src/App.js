@@ -10,16 +10,16 @@ import { themeSettings } from "./theme";
 
 
 function App() {
-  const mode = useSelector((state) => state.mode);
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
+  const mode = useSelector((state) => state.mode); //this will help us to grab the initial value we have created of mode in state-index.js
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]); //this will setup our theme we have yet to pass it into material ui yet and thats 
   const isAuth = Boolean(useSelector((state) => state.token));
 
   return (
     <div className="app">
       <BrowserRouter>
         <ThemeProvider theme={theme}>
-          <CssBaseline />
-          <Routes>
+           <CssBaseline />        { /* reset our css  */}
+           <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route
               path="/home"
