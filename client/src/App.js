@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
-import HomePage from "scenes/homePage"; //config.json ka yahi purpose hai relative path./scenes/homepage ese nahi imopt karna pdega humko hum direct scenes/homepage bhi  import kar skate hai
+import HomePage from "scenes/homePage"; //jsconfig.json ka yahi purpose hai relative path./scenes/homepage ese nahi imopt karna pdega humko hum direct scenes/homepage bhi  import kar skate hai
 import LoginPage from "scenes/loginPage";
 import ProfilePage from "scenes/profilePage";
 import { useMemo } from "react";
