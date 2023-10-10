@@ -18,8 +18,8 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <ThemeProvider theme={theme}>
-           <CssBaseline />        { /* reset our css  */}
-           <Routes>
+          <CssBaseline />
+          <Routes>
             <Route path="/" element={<LoginPage />} />
             <Route
               path="/home"

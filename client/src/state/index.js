@@ -11,11 +11,13 @@ export const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
+    //changing light mode to dark mode and viceversa 
     setMode: (state) => {
       state.mode = state.mode === "light" ? "dark" : "light";
     },
+    //state , action yeh sirf params hote hai function ke inke redux m paylod bolte hai 
     setLogin: (state, action) => {
-      state.user = action.payload.user;
+      state.user = action.payload.user; 
       state.token = action.payload.token;
     },
     setLogout: (state) => {
